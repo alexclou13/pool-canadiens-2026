@@ -1,9 +1,0 @@
-{
-  "name": "Pool multi séries des canadiens 2026",
-  "short_name": "Pool CH 2026",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#001e62",
-  "theme_color": "#001e62",
-  "icons": []
-}
