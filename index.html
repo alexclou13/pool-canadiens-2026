@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pool multi séries des canadiens 2026</title>
+  <style>
+    :root{
+      --bg:#08111e;
+      --card:#101b2d;
+      --card2:#14223a;
+      --line:#243859;
+      --text:#eef3ff;
+      --muted:#b9c6de;
+      --red:#c8102e;
+      --blue:#001e62;
+      --green:#1f9d55;
+      --gold:#f4c542;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#06101b,#0c1730 45%,#09111d);
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:16px}
+    .card{
+      background:rgba(16,27,45,.97);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 10px 28px rgba(0,0,0,.25);
+    }
+    .hidden{display:none !important}
+    .hero{text-align:center}
+    .hero img{
+      width:min(360px,88vw);
+      display:block;
+      margin:0 auto 14px auto;
+      border-radius:16px;
+      box-shadow:0 8px 22px rgba(0,0,0,.35);
+    }
+    h1,h2,h3{margin:0 0 10px}
+    h1{font-size:clamp(28px,4vw,42px)}
+    h2{font-size:clamp(20px,3vw,28px)}
+    p,li,label,input,select,button,td,th{font-size:16px}
+    .desc{
+      color:var(--muted);
+      max-width:860px;
+      margin:0 auto 10px;
+      line-height:1.45;
+    }
+    .grid{display:grid;gap:14px}
+    .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    @media (max-width:820px){
+      .g2,.g3,.g4{grid-template-columns:1fr}
+    }
+    label{display:block;margin:0 0 6px;color:#dde7ff}
+    input,select,button,textarea{
+      width:100%;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#091527;
+      color:var(--text);
+    }
+    button{
+      border:none;
+      background:linear-gradient(180deg,var(--red),#9a0e24);
+      font-weight:700;
+      cursor:pointer;
+    }
+    button.secondary{
+      background:#15233b;
+      border:1px solid var(--line);
+    }
+    button.green{
+      background:linear-gradient(180deg,#1fb061,#168347);
+    }
+    button.gold{
+      background:linear-gradient(180deg,#ffd15e,#dca800);
+      color:#121212;
+    }
+    .rules{
+      text-align:left;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      max-width:880px;
+      margin:12px auto 0;
+    }
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    .pill{
+      display:inline-block;
+      padding:8px 12px;
+      background:#0b1526;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      margin:4px 6px 0 0;
+    }
+    .banner{
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#0d1a2d;
+      margin:10px 0;
+    }
+    .danger{color:#ff9eb0}
+    .success{color:#8ae3ab}
+    .small{font-size:13px;color:var(--muted)}
+    .mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+    }
+    th,td{
+      padding:10px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+    th{color:#dce7ff}
+    tr:last-child td{border-bottom:none}
+    .row-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .center{text-align:center}
+    .right{text-align:right}
+    .divider{height:1px;background:var(--line);margin:14px 0}
+    .admin-box{outline:2px dashed rgba(244,197,66,.35)}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- LOGIN VIEW -->
+  <div id="loginView" class="card hero">
+    <img src="logo-playoffs-2026.png" alt="Logo séries éliminatoires 2026">
+    <h1>Pool multi séries des canadiens 2026</h1>
+    <p class="desc">pool multi : 1 point pour équipe gagnante, 2 points pour score exact et 3 points pour marqueur du but gagnant!</p>
+
+    <div class="rules">
+      <h3>Règlement</h3>
+      <ul>
+        <li>Entrer la prédiction avant 17h</li>
+        <li>Écrire uniquement le nom de famille du joueur qui marquera le but gagnant</li>
+        <li>Sélectionner l’équipe qui selon vous gagnera le match</li>
+        <li>Inscrire le nombre de but marqué pour chaque équipe dans les cases appropriés</li>
+        <li>Ne pas respecter les règlements entraînera un pointage de zéro au match pour le participant</li>
+      </ul>
+    </div>
+
+    <div class="grid g2 mt16">
+      <div class="card">
+        <h2>Connexion participant</h2>
+        <div class="mt12">
+          <label>Nom du participant</label>
+          <select id="loginParticipant"></select>
+        </div>
+        <div class="mt12">
+          <label>Mot de passe</label>
+          <input type="password" id="loginPassword" placeholder="Mot de passe">
+        </div>
+        <div class="mt16">
+          <button onclick="loginParticipant()">Se connecter</button>
+        </div>
+        <p class="small mt12">Le participant doit avoir été créé par l’administrateur.</p>
+      </div>
+
+      <div class="card admin-box">
+        <h2>Connexion admin</h2>
+        <div class="mt12">
+          <label>Code admin</label>
+          <input type="password" id="adminPasswordLogin" placeholder="Code admin">
+        </div>
+        <div class="mt16">
+          <button class="gold" onclick="loginAdmin()">Ouvrir mode admin</button>
+        </div>
+        <p class="small mt12">Code admin par défaut : 1234</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTICIPANT VIEW -->
+  <div id="participantView" class="hidden">
+    <div class="topbar">
+      <div>
+        <span class="pill">Connecté : <strong id="whoami">-</strong></span>
+        <span class="pill">Date du match : <strong id="matchDateLabel">-</strong></span>
+        <span class="pill">Heure limite : <strong id="deadlineLabel">-</strong></span>
+      </div>
+      <div>
+        <button class="secondary" onclick="logout()">Déconnexion</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Page de prédiction</h2>
+      <p class="desc" style="margin-left:0">Entre ta prédiction pour le match en cours.</p>
+      <div id="predictionLockedBanner" class="banner danger hidden">Les prédictions sont fermées pour ce match.</div>
+
+      <div class="grid g2 mt12">
+        <div>
+          <label>Équipe gagnante</label>
+          <select id="pickWinner"></select>
+        </div>
+        <div>
+          <label>Marqueur du but gagnant (nom de famille du joueur)</label>
+          <input id="pickGWG" placeholder="Ex. Caufield">
+        </div>
+      </div>
+
+      <div class="grid g2 mt12">
+        <div>
+          <label id="scoreTeam1Label">Score exact Canadiens de Montréal</label>
+          <input id="pickScore1" type="number" min="0" step="1" placeholder="0">
+        </div>
+        <div>
+          <label id="scoreTeam2Label">Score exact équipe 2</label>
+          <input id="pickScore2" type="number" min="0" step="1" placeholder="0">
+        </div>
+      </div>
+
+      <div class="mt16">
+        <button class="green" onclick="savePrediction()">Enregistrer ma prédiction</button>
+      </div>
+      <div id="participantSaveMsg" class="small mt12"></div>
+    </div>
+  </div>
+
+  <!-- ADMIN VIEW -->
+  <div id="adminView" class="hidden">
+    <div class="topbar">
+      <div>
+        <span class="pill">Mode admin</span>
+        <span class="pill">Participants : <strong id="participantCount">0</strong></span>
+        <span class="pill">Cagnotte totale : <strong id="jackpotLabel">0 $</strong></span>
+      </div>
+      <div class="row-actions">
+        <button class="secondary" onclick="logout()">Fermer la session</button>
+      </div>
+    </div>
+
+    <div class="grid g2">
+      <div class="card admin-box">
+        <div class="section-title">
+          <h2>Paramètres du match</h2>
+        </div>
+        <div class="grid g2">
+          <div>
+            <label>Équipe 1</label>
+            <input id="adminTeam1" placeholder="Canadiens de Montréal">
+          </div>
+          <div>
+            <label>Équipe 2</label>
+            <input id="adminTeam2" placeholder="Adversaire">
+          </div>
+        </div>
+        <div class="grid g2 mt12">
+          <div>
+            <label>Date du match</label>
+            <input id="adminMatchDate" type="date">
+          </div>
+          <div>
+            <label>Heure limite pour la prédiction</label>
+            <input id="adminDeadline" type="datetime-local">
+          </div>
+        </div>
+        <div class="mt16">
+          <button onclick="saveMatchSettings()">Sauvegarder les paramètres du match</button>
+        </div>
+      </div>
+
+      <div class="card admin-box">
+        <div class="section-title">
+          <h2>Résultat officiel</h2>
+        </div>
+        <div class="grid g2">
+          <div>
+            <label id="adminScore1Label">Score exact Canadiens de Montréal</label>
+            <input id="officialScore1" type="number" min="0" step="1">
+          </div>
+          <div>
+            <label id="adminScore2Label">Score exact équipe 2</label>
+            <input id="officialScore2" type="number" min="0" step="1">
+          </div>
+        </div>
+        <div class="grid g2 mt12">
+          <div>
+            <label>Équipe gagnante officielle</label>
+            <select id="officialWinner"></select>
+          </div>
+          <div>
+            <label>Marqueur du but gagnant officiel (nom de famille)</label>
+            <input id="officialGWG" placeholder="Ex. Suzuki">
+          </div>
+        </div>
+        <div class="mt16 row-actions">
+          <button class="green" onclick="calculatePoints()">Calculer les points</button>
+          <button class="gold" onclick="archiveCurrentMatch()">Archiver ce match au cumulatif</button>
+        </div>
+        <div id="calcMsg" class="small mt12"></div>
+      </div>
+    </div>
+
+    <div class="grid g2 mt16">
+      <div class="card admin-box">
+        <div class="section-title">
+          <h2>Gestion des participants</h2>
+        </div>
+        <div class="grid g4">
+          <div>
+            <label>Nom du participant</label>
+            <input id="newParticipantName" placeholder="Ex. Alexis">
+          </div>
+          <div>
+            <label>Mot de passe</label>
+            <input id="newParticipantPassword" placeholder="Mot de passe">
+          </div>
+          <div>
+            <label>Payé ?</label>
+            <select id="newParticipantPaid">
+              <option value="true">Oui</option>
+              <option value="false">Non</option>
+            </select>
+          </div>
+          <div style="align-self:end">
+            <button onclick="addParticipant()">Ajouter le participant</button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <div style="overflow:auto">
+          <table id="participantsTable"></table>
+        </div>
+      </div>
+
+      <div class="card admin-box">
+        <div class="section-title">
+          <h2>Prédictions du match en cours</h2>
+        </div>
+        <div style="overflow:auto">
+          <table id="predictionsTable"></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g2 mt16">
+      <div class="card">
+        <div class="section-title">
+          <h2>Classement du match</h2>
+        </div>
+        <div style="overflow:auto">
+          <table id="matchStandingsTable"></table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">
+          <h2>Classement cumulatif de la série</h2>
+        </div>
+        <div style="overflow:auto">
+          <table id="seriesStandingsTable"></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt16 admin-box">
+      <div class="section-title">
+        <h2>Sécurité admin</h2>
+      </div>
+      <div class="grid g2">
+        <div>
+          <label>Nouveau code admin</label>
+          <input id="newAdminPassword" placeholder="Nouveau code admin">
+        </div>
+        <div style="align-self:end">
+          <button class="secondary" onclick="changeAdminPassword()">Changer le code admin</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const STORAGE_KEY = "pool_multi_series_canadiens_2026_v7";
+
+const defaultState = {
+  adminPassword: "1234",
+  match: {
+    team1: "Canadiens de Montréal",
+    team2: "Adversaire",
+    matchDate: "",
+    deadline: "",
+    archivedCounter: 0
+  },
+  participants: [],
+  currentPredictions: [],
+  currentScores: [],
+  archivedMatches: [],
+  session: { role: null, participantId: null }
+};
+
+let state = loadState();
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return structuredClone(defaultState);
+    const parsed = JSON.parse(raw);
+    return mergeDefaults(parsed, defaultState);
+  }catch(e){
+    return structuredClone(defaultState);
+  }
+}
+
+function mergeDefaults(obj, defaults){
+  if(Array.isArray(defaults)) return Array.isArray(obj) ? obj : defaults;
+  if(typeof defaults !== "object" || defaults === null) return obj ?? defaults;
+  const out = {};
+  for(const k of Object.keys(defaults)){
+    out[k] = mergeDefaults(obj ? obj[k] : undefined, defaults[k]);
+  }
+  if(obj && typeof obj === "object"){
+    for(const k of Object.keys(obj)){
+      if(!(k in out)) out[k] = obj[k];
+    }
+  }
+  return out;
+}
+
+function saveState(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function uid(){
+  return Math.random().toString(36).slice(2,10) + Date.now().toString(36).slice(-4);
+}
+
+function escapeHtml(s){
+  return String(s ?? "").replace(/[&<>"']/g, m => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[m]));
+}
+
+function byId(id){ return document.getElementById(id); }
+
+function currentDeadlinePassed(){
+  if(!state.match.deadline) return false;
+  const now = new Date();
+  const limit = new Date(state.match.deadline);
+  return now > limit;
+}
+
+function formatDateOnly(value){
+  if(!value) return "-";
+  const d = new Date(value + "T00:00");
+  if(isNaN(d)) return value;
+  return d.toLocaleDateString("fr-CA", {year:"numeric", month:"2-digit", day:"2-digit"});
+}
+
+function formatDateTime(value){
+  if(!value) return "-";
+  const d = new Date(value);
+  if(isNaN(d)) return value;
+  return d.toLocaleString("fr-CA", {
+    year:"numeric", month:"2-digit", day:"2-digit",
+    hour:"2-digit", minute:"2-digit"
+  });
+}
+
+function updateCommonLabels(){
+  byId("scoreTeam1Label").textContent = "Score exact " + state.match.team1;
+  byId("scoreTeam2Label").textContent = "Score exact " + state.match.team2;
+  byId("adminScore1Label").textContent = "Score exact " + state.match.team1;
+  byId("adminScore2Label").textContent = "Score exact " + state.match.team2;
+
+  const winnerSelect = byId("pickWinner");
+  const offWinner = byId("officialWinner");
+  winnerSelect.innerHTML = "";
+  offWinner.innerHTML = "";
+  [state.match.team1, state.match.team2].forEach(team => {
+    const o1 = document.createElement("option");
+    o1.value = team;
+    o1.textContent = team;
+    winnerSelect.appendChild(o1);
+
+    const o2 = document.createElement("option");
+    o2.value = team;
+    o2.textContent = team;
+    offWinner.appendChild(o2);
+  });
+
+  byId("matchDateLabel").textContent = formatDateOnly(state.match.matchDate);
+  byId("deadlineLabel").textContent = formatDateTime(state.match.deadline);
+  byId("participantCount").textContent = state.participants.length;
+  byId("jackpotLabel").textContent = (state.participants.length * 10) + " $";
+
+  byId("adminTeam1").value = state.match.team1 || "";
+  byId("adminTeam2").value = state.match.team2 || "";
+  byId("adminMatchDate").value = state.match.matchDate || "";
+  byId("adminDeadline").value = state.match.deadline || "";
+}
+
+function renderLoginParticipants(){
+  const sel = byId("loginParticipant");
+  sel.innerHTML = "";
+  if(state.participants.length === 0){
+    const opt = document.createElement("option");
+    opt.value = "";
+    opt.textContent = "Aucun participant créé";
+    sel.appendChild(opt);
+    return;
+  }
+  const first = document.createElement("option");
+  first.value = "";
+  first.textContent = "Choisir un participant";
+  sel.appendChild(first);
+  state.participants
+    .slice()
+    .sort((a,b)=> a.name.localeCompare(b.name,"fr"))
+    .forEach(p=>{
+      const opt = document.createElement("option");
+      opt.value = p.id;
+      opt.textContent = p.name;
+      sel.appendChild(opt);
+    });
+}
+
+function loginParticipant(){
+  const participantId = byId("loginParticipant").value;
+  const password = byId("loginPassword").value;
+  const p = state.participants.find(x => x.id === participantId);
+  if(!p){
+    alert("Choisis un participant.");
+    return;
+  }
+  if(password !== p.password){
+    alert("Mot de passe incorrect.");
+    return;
+  }
+  state.session = { role:"participant", participantId:p.id };
+  saveState();
+  renderApp();
+}
+
+function loginAdmin(){
+  const code = byId("adminPasswordLogin").value;
+  if(code !== state.adminPassword){
+    alert("Code admin incorrect.");
+    return;
+  }
+  state.session = { role:"admin", participantId:null };
+  saveState();
+  renderApp();
+}
+
+function logout(){
+  state.session = { role:null, participantId:null };
+  saveState();
+  byId("loginPassword").value = "";
+  byId("adminPasswordLogin").value = "";
+  renderApp();
+}
+
+function getCurrentParticipant(){
+  return state.participants.find(p => p.id === state.session.participantId);
+}
+
+function savePrediction(){
+  if(state.session.role !== "participant") return;
+  if(currentDeadlinePassed()){
+    byId("participantSaveMsg").textContent = "Les prédictions sont fermées.";
+    return;
+  }
+  const p = getCurrentParticipant();
+  if(!p) return;
+
+  const winner = byId("pickWinner").value.trim();
+  const gwg = byId("pickGWG").value.trim();
+  const score1 = byId("pickScore1").value;
+  const score2 = byId("pickScore2").value;
+
+  const pred = {
+    id: uid(),
+    participantId: p.id,
+    participantName: p.name,
+    winner,
+    gwg,
+    score1: score1 === "" ? "" : Number(score1),
+    score2: score2 === "" ? "" : Number(score2),
+    savedAt: new Date().toISOString()
+  };
+
+  const existingIndex = state.currentPredictions.findIndex(x => x.participantId === p.id);
+  if(existingIndex >= 0){
+    pred.id = state.currentPredictions[existingIndex].id;
+    state.currentPredictions[existingIndex] = pred;
+  } else {
+    state.currentPredictions.push(pred);
+  }
+  saveState();
+  byId("participantSaveMsg").textContent = "Prédiction enregistrée.";
+  renderTables();
+}
+
+function saveMatchSettings(){
+  state.match.team1 = byId("adminTeam1").value.trim() || "Canadiens de Montréal";
+  state.match.team2 = byId("adminTeam2").value.trim() || "Adversaire";
+  state.match.matchDate = byId("adminMatchDate").value;
+  state.match.deadline = byId("adminDeadline").value;
+  saveState();
+  updateCommonLabels();
+  renderTables();
+  alert("Paramètres du match sauvegardés.");
+}
+
+function addParticipant(){
+  const name = byId("newParticipantName").value.trim();
+  const password = byId("newParticipantPassword").value.trim();
+  const paid = byId("newParticipantPaid").value === "true";
+  if(!name || !password){
+    alert("Entre le nom et le mot de passe.");
+    return;
+  }
+  const exists = state.participants.some(p => p.name.toLowerCase() === name.toLowerCase());
+  if(exists){
+    alert("Ce participant existe déjà.");
+    return;
+  }
+  state.participants.push({
+    id: uid(),
+    name,
+    password,
+    paid,
+    totalPoints: 0
+  });
+  byId("newParticipantName").value = "";
+  byId("newParticipantPassword").value = "";
+  saveState();
+  renderLoginParticipants();
+  updateCommonLabels();
+  renderTables();
+}
+
+function deleteParticipant(id){
+  if(!confirm("Supprimer ce participant ?")) return;
+  state.participants = state.participants.filter(p => p.id !== id);
+  state.currentPredictions = state.currentPredictions.filter(p => p.participantId !== id);
+  state.currentScores = state.currentScores.filter(s => s.participantId !== id);
+  saveState();
+  renderLoginParticipants();
+  updateCommonLabels();
+  renderTables();
+}
+
+function editParticipant(id){
+  const p = state.participants.find(x => x.id === id);
+  if(!p) return;
+  const newName = prompt("Nom du participant :", p.name);
+  if(newName === null) return;
+  const newPwd = prompt("Mot de passe du participant :", p.password);
+  if(newPwd === null) return;
+  const paid = confirm("Participant payé ? OK = Oui / Annuler = Non");
+  p.name = newName.trim() || p.name;
+  p.password = newPwd.trim() || p.password;
+  p.paid = paid;
+  const pred = state.currentPredictions.find(x => x.participantId === id);
+  if(pred) pred.participantName = p.name;
+  saveState();
+  renderLoginParticipants();
+  renderTables();
+}
+
+function togglePaid(id){
+  const p = state.participants.find(x => x.id === id);
+  if(!p) return;
+  p.paid = !p.paid;
+  saveState();
+  renderTables();
+}
+
+function editPrediction(participantId){
+  const pred = state.currentPredictions.find(x => x.participantId === participantId);
+  const p = state.participants.find(x => x.id === participantId);
+  if(!p) return;
+
+  const base = pred || {
+    participantId: p.id,
+    participantName: p.name,
+    winner: state.match.team1,
+    gwg: "",
+    score1: "",
+    score2: ""
+  };
+
+  const winner = prompt("Équipe gagnante :", base.winner);
+  if(winner === null) return;
+  const gwg = prompt("Marqueur du but gagnant (nom de famille) :", base.gwg);
+  if(gwg === null) return;
+  const score1 = prompt("Score exact " + state.match.team1 + " :", base.score1);
+  if(score1 === null) return;
+  const score2 = prompt("Score exact " + state.match.team2 + " :", base.score2);
+  if(score2 === null) return;
+
+  const newPred = {
+    id: pred ? pred.id : uid(),
+    participantId: p.id,
+    participantName: p.name,
+    winner: winner.trim(),
+    gwg: gwg.trim(),
+    score1: score1 === "" ? "" : Number(score1),
+    score2: score2 === "" ? "" : Number(score2),
+    savedAt: new Date().toISOString(),
+    editedByAdmin: true
+  };
+
+  const idx = state.currentPredictions.findIndex(x => x.participantId === participantId);
+  if(idx >= 0) state.currentPredictions[idx] = newPred;
+  else state.currentPredictions.push(newPred);
+
+  saveState();
+  renderTables();
+}
+
+function calculatePoints(){
+  const winner = byId("officialWinner").value.trim();
+  const gwg = byId("officialGWG").value.trim().toLowerCase();
+  const score1 = byId("officialScore1").value;
+  const score2 = byId("officialScore2").value;
+
+  if(score1 === "" || score2 === "" || !winner){
+    alert("Entre le résultat officiel complet.");
+    return;
+  }
+
+  state.currentScores = state.participants.map(p => {
+    const pred = state.currentPredictions.find(x => x.participantId === p.id);
+    let points = 0;
+    let detail = { winner:0, exactScore:0, gwg:0 };
+
+    if(pred){
+      if((pred.winner || "").trim().toLowerCase() === winner.toLowerCase()){
+        detail.winner = 1; points += 1;
+      }
+      if(Number(pred.score1) === Number(score1) && Number(pred.score2) === Number(score2)){
+        detail.exactScore = 2; points += 2;
+      }
+      if((pred.gwg || "").trim().toLowerCase() === gwg){
+        detail.gwg = 3; points += 3;
+      }
+    }
+    return {
+      participantId: p.id,
+      participantName: p.name,
+      points,
+      detail
+    };
+  });
+
+  saveState();
+  renderTables();
+  byId("calcMsg").textContent = "Points calculés pour le match en cours.";
+}
+
+function archiveCurrentMatch(){
+  if(state.currentScores.length === 0){
+    alert("Calcule les points avant d’archiver.");
+    return;
+  }
+
+  const official = {
+    winner: byId("officialWinner").value.trim(),
+    gwg: byId("officialGWG").value.trim(),
+    score1: byId("officialScore1").value === "" ? "" : Number(byId("officialScore1").value),
+    score2: byId("officialScore2").value === "" ? "" : Number(byId("officialScore2").value)
+  };
+
+  state.match.archivedCounter += 1;
+
+  const archived = {
+    id: uid(),
+    matchNumber: state.match.archivedCounter,
+    matchDate: state.match.matchDate,
+    deadline: state.match.deadline,
+    team1: state.match.team1,
+    team2: state.match.team2,
+    official,
+    predictions: JSON.parse(JSON.stringify(state.currentPredictions)),
+    scores: JSON.parse(JSON.stringify(state.currentScores))
+  };
+  state.archivedMatches.push(archived);
+
+  state.currentScores.forEach(scoreRow => {
+    const p = state.participants.find(x => x.id === scoreRow.participantId);
+    if(p) p.totalPoints = Number(p.totalPoints || 0) + Number(scoreRow.points || 0);
+  });
+
+  state.currentPredictions = [];
+  state.currentScores = [];
+  byId("officialScore1").value = "";
+  byId("officialScore2").value = "";
+  byId("officialGWG").value = "";
+  saveState();
+  renderTables();
+  alert("Match archivé au classement cumulatif.");
+}
+
+function changeAdminPassword(){
+  const np = byId("newAdminPassword").value.trim();
+  if(!np){
+    alert("Entre un nouveau code admin.");
+    return;
+  }
+  state.adminPassword = np;
+  byId("newAdminPassword").value = "";
+  saveState();
+  alert("Code admin changé.");
+}
+
+function fillParticipantView(){
+  const p = getCurrentParticipant();
+  if(!p) return;
+  byId("whoami").textContent = p.name;
+
+  const pred = state.currentPredictions.find(x => x.participantId === p.id);
+  updateCommonLabels();
+  if(pred){
+    byId("pickWinner").value = pred.winner || state.match.team1;
+    byId("pickGWG").value = pred.gwg || "";
+    byId("pickScore1").value = pred.score1 ?? "";
+    byId("pickScore2").value = pred.score2 ?? "";
+  } else {
+    byId("pickWinner").value = state.match.team1;
+    byId("pickGWG").value = "";
+    byId("pickScore1").value = "";
+    byId("pickScore2").value = "";
+  }
+
+  const locked = currentDeadlinePassed();
+  byId("predictionLockedBanner").classList.toggle("hidden", !locked);
+  ["pickWinner","pickGWG","pickScore1","pickScore2"].forEach(id => byId(id).disabled = locked);
+}
+
+function renderParticipantsTable(){
+  const table = byId("participantsTable");
+  const rows = state.participants
+    .slice()
+    .sort((a,b)=> a.name.localeCompare(b.name,"fr"))
+    .map(p => `
+      <tr>
+        <td>${escapeHtml(p.name)}</td>
+        <td>${escapeHtml(p.password)}</td>
+        <td>${p.paid ? '<span class="success">Oui</span>' : '<span class="danger">Non</span>'}</td>
+        <td>${Number(p.totalPoints || 0)}</td>
+        <td>
+          <div class="row-actions">
+            <button class="secondary" onclick="editParticipant('${p.id}')">Modifier</button>
+            <button class="secondary" onclick="togglePaid('${p.id}')">${p.paid ? 'Mettre non payé' : 'Mettre payé'}</button>
+            <button class="secondary" onclick="deleteParticipant('${p.id}')">Supprimer</button>
+          </div>
+        </td>
+      </tr>
+    `).join("");
+
+  table.innerHTML = `
+    <tr>
+      <th>Participant</th>
+      <th>Mot de passe</th>
+      <th>Payé</th>
+      <th>Points cumulés</th>
+      <th>Actions</th>
+    </tr>
+    ${rows || '<tr><td colspan="5" class="small">Aucun participant.</td></tr>'}
+  `;
+}
+
+function renderPredictionsTable(){
+  const table = byId("predictionsTable");
+  const rows = state.participants
+    .slice()
+    .sort((a,b)=> a.name.localeCompare(b.name,"fr"))
+    .map(p => {
+      const pred = state.currentPredictions.find(x => x.participantId === p.id);
+      return `
+        <tr>
+          <td>${escapeHtml(p.name)}</td>
+          <td>${pred ? escapeHtml(pred.winner) : "-"}</td>
+          <td>${pred && pred.score1 !== "" ? pred.score1 : "-"}</td>
+          <td>${pred && pred.score2 !== "" ? pred.score2 : "-"}</td>
+          <td>${pred ? escapeHtml(pred.gwg) : "-"}</td>
+          <td>${pred ? formatDateTime(pred.savedAt) : "-"}</td>
+          <td><button class="secondary" onclick="editPrediction('${p.id}')">Modifier</button></td>
+        </tr>
+      `;
+    }).join("");
+
+  table.innerHTML = `
+    <tr>
+      <th>Participant</th>
+      <th>Gagnant</th>
+      <th>${escapeHtml(state.match.team1)}</th>
+      <th>${escapeHtml(state.match.team2)}</th>
+      <th>But gagnant</th>
+      <th>Enregistré</th>
+      <th>Action</th>
+    </tr>
+    ${rows || '<tr><td colspan="7" class="small">Aucune prédiction.</td></tr>'}
+  `;
+}
+
+function renderMatchStandings(){
+  const table = byId("matchStandingsTable");
+  const rows = state.currentScores
+    .slice()
+    .sort((a,b)=> b.points - a.points || a.participantName.localeCompare(b.participantName,"fr"))
+    .map((s, idx) => `
+      <tr>
+        <td>${idx+1}</td>
+        <td>${escapeHtml(s.participantName)}</td>
+        <td>${s.detail.winner}</td>
+        <td>${s.detail.exactScore}</td>
+        <td>${s.detail.gwg}</td>
+        <td><strong>${s.points}</strong></td>
+      </tr>
+    `).join("");
+
+  table.innerHTML = `
+    <tr>
+      <th>#</th>
+      <th>Participant</th>
+      <th>Équipe gagnante</th>
+      <th>Score exact</th>
+      <th>But gagnant</th>
+      <th>Total match</th>
+    </tr>
+    ${rows || '<tr><td colspan="6" class="small">Aucun point calculé pour le match en cours.</td></tr>'}
+  `;
+}
+
+function renderSeriesStandings(){
+  const table = byId("seriesStandingsTable");
+  const rows = state.participants
+    .slice()
+    .sort((a,b)=> Number(b.totalPoints||0) - Number(a.totalPoints||0) || a.name.localeCompare(b.name,"fr"))
+    .map((p, idx) => `
+      <tr>
+        <td>${idx+1}</td>
+        <td>${escapeHtml(p.name)}</td>
+        <td>${p.paid ? "Oui" : "Non"}</td>
+        <td><strong>${Number(p.totalPoints || 0)}</strong></td>
+      </tr>
+    `).join("");
+
+  table.innerHTML = `
+    <tr>
+      <th>#</th>
+      <th>Participant</th>
+      <th>Payé</th>
+      <th>Points cumulés</th>
+    </tr>
+    ${rows || '<tr><td colspan="4" class="small">Aucun participant.</td></tr>'}
+  `;
+}
+
+function renderTables(){
+  renderParticipantsTable();
+  renderPredictionsTable();
+  renderMatchStandings();
+  renderSeriesStandings();
+  updateCommonLabels();
+}
+
+function renderApp(){
+  renderLoginParticipants();
+  updateCommonLabels();
+  renderTables();
+
+  byId("loginView").classList.add("hidden");
+  byId("participantView").classList.add("hidden");
+  byId("adminView").classList.add("hidden");
+
+  if(state.session.role === "participant"){
+    fillParticipantView();
+    byId("participantView").classList.remove("hidden");
+  } else if(state.session.role === "admin"){
+    byId("adminView").classList.remove("hidden");
+  } else {
+    byId("loginView").classList.remove("hidden");
+  }
+}
+
+renderApp();
+window.loginParticipant = loginParticipant;
+window.loginAdmin = loginAdmin;
+window.logout = logout;
+window.savePrediction = savePrediction;
+window.saveMatchSettings = saveMatchSettings;
+window.addParticipant = addParticipant;
+window.deleteParticipant = deleteParticipant;
+window.editParticipant = editParticipant;
+window.togglePaid = togglePaid;
+window.editPrediction = editPrediction;
+window.calculatePoints = calculatePoints;
+window.archiveCurrentMatch = archiveCurrentMatch;
+window.changeAdminPassword = changeAdminPassword;
+</script>
+</body>
+</html>
