@@ -1,5 +1,3 @@
-// Remplace ce bloc avec la config de TON projet Firebase.
-// Exemple:
 // window.FIREBASE_CONFIG = null;
 //   apiKey: "AIzaSyDTMOt9BY1NSIeAFMGB1uj5cUurAQJsRhE",
 //   authDomain: "pool-multi-series-2026.firebaseapp.com",
